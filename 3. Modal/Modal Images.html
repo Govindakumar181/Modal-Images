@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #222;
+            margin-top: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        .thumbnails img{
+            height: 90px;
+            border: 4px solid #555;
+            padding: 1px;
+            margin: 0 9px 9px 0; 
+        }
+        .thumbnails img:hover{
+            border: 4px solid #00ccff;
+        }
+            
+    
+
+        .modal {
+            
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 200px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal-content:hover{
+    border: 1px solid #00cc00;
+
+}
+
+
+
+.modal-content {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 160px;
+    right: 270px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+        
+    </style>
+</head>
+<body>
+    
+    <div id="container" align="center">
+        <br>
+        <h1>My MODAL Image Project</h1>
+        <br>
+        <div class="thumbnails">
+            <img id="myImg1" name="img1" src="images/img1.jpg" alt="img1">
+            <img id="myImg2" name="img2" src="images/img2.jpg" alt="img2">
+            <img id="myImg3" name="img3" src="images/img3.jpg" alt="img3">
+            <img id="myImg4" name="img4" src="images/img4.jpg" alt="img4">
+            <img id="myImg5" name="img5" src="images/img5.jpg" alt="img5">
+            <img id="myImg6" name="img6" src="images/img6.jpg" alt="img6">
+
+        </div>
+        <br>
+
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+
+
+    </div>
+
+
+    <script>
+var modal = document.getElementById('myModal');
+
+var img1 = document.getElementById('myImg1');
+var img2 = document.getElementById('myImg2');
+var img3 = document.getElementById('myImg3');
+var img4 = document.getElementById('myImg4');
+var img5 = document.getElementById('myImg5');
+var img6 = document.getElementById('myImg6');
+
+
+var modalImg = document.getElementById("img01");
+img1.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+img2.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img3.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img4.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img5.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+img6.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+    </script>
+
+        
+</body>
+</html>
